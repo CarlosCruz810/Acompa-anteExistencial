@@ -1,253 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carlos Cruz | Acompañamiento Existencial</title>
+<section class="section fade">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<h2>Solicitud de proceso</h2>
 
-<style>
-:root {
-    --gold: #C5A059;
-    --bg: #0A0F14;
-    --text: #EDEBE6;
-}
+<p>
+Este espacio es limitado y cada solicitud es revisada personalmente.  
+Responde con honestidad.
+</p>
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    background: var(--bg);
-}
+<form id="premiumForm">
 
-/* HERO */
-.hero {
-    height: 100vh;
+<input type="text" placeholder="Nombre completo" required>
+
+<textarea placeholder="¿Qué estás atravesando en este momento?" required></textarea>
+
+<textarea placeholder="¿Por qué sientes que ahora es el momento de trabajarlo?" required></textarea>
+
+<textarea placeholder="¿Qué has intentado antes?" required></textarea>
+
+<textarea placeholder="¿Qué esperas encontrar en este proceso?" required></textarea>
+
+<select required>
+<option value="">¿Estás dispuesto a un proceso profundo?</option>
+<option>Sí</option>
+<option>No</option>
+</select>
+
+<input type="text" placeholder="Email o WhatsApp" required>
+
+<button type="submit" class="btn">Enviar solicitud</button>
+
+</form>
+
+</section>
+form {
+    max-width: 600px;
+    margin: 40px auto 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    text-align: center;
+    gap: 20px;
 }
 
-.logo-img {
-    height: 55vh;
-    opacity: 0.9;
+input, textarea, select {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 14px;
+    color: white;
+    font-family: 'Inter', sans-serif;
 }
 
-.tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    max-width: 600px;
-    line-height: 1.5;
-    margin: 40px 0;
+textarea {
+    min-height: 100px;
+    resize: none;
 }
 
-/* BOTÓN LUJO */
-.btn {
-    padding: 14px 40px;
-    border: 1px solid rgba(255,255,255,0.15);
-    text-decoration: none;
-    color: var(--text);
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transition: 0.4s;
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #C5A059;
 }
-
-.btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-}
-
-/* SECCIÓN */
-.section {
-    max-width: 900px;
-    margin: auto;
-    padding: 120px 20px;
-}
-
-/* SOBRE */
-.about {
-    text-align: center;
-}
-
-.about h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: var(--gold);
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    margin-bottom: 30px;
-}
-
-.about p {
-    opacity: 0.75;
-    line-height: 1.8;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* EXPERIENCIA */
-.experience {
-    text-align: center;
-}
-
-.experience h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.experience p {
-    opacity: 0.7;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* DIVISOR */
-.divider {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 40px auto;
-    opacity: 0.5;
-}
-
-/* CTA FINAL */
-.cta {
-    text-align: center;
-}
-
-.cta h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-.cta p {
-    opacity: 0.7;
-    margin-bottom: 40px;
-}
-
-/* WHATSAPP DISCRETO */
-.private-link {
-    margin-top: 30px;
-    font-size: 0.8rem;
-    opacity: 0.5;
-}
-
-.private-link a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.private-link a:hover {
-    opacity: 1;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 60px;
-    font-size: 0.7rem;
-    opacity: 0.4;
-}
-
-/* ANIMACIÓN SUAVE */
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1.5s ease;
-}
-
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-    <img src="logo.png" class="logo-img">
-    <p class="tagline">
-        Un espacio donde el dolor deja de ser ruido…  
-        y comienza a tener sentido.
-    </p>
-    <a href="#" class="btn">Solicitar proceso</a>
-</section>
-
-<!-- SOBRE -->
-<section class="section about fade">
-    <p class="subtitle">Fundador de Tierra, Semilla y Fruto</p>
-    <h2>Carlos Cruz</h2>
-
-    <div class="divider"></div>
-
-    <p>
-        Psicólogo y tanatólogo.  
-        Trabajo con procesos humanos que no encuentran lugar en lo cotidiano.  
-        Acompaño desde la presencia, no desde la técnica.
-    </p>
-</section>
-
-<!-- EXPERIENCIA -->
-<section class="section experience fade">
-    <h2>No es terapia convencional</h2>
-
-    <div class="divider"></div>
-
-    <p>
-        Este espacio no es para todos.  
-        Es para quienes están listos para sostener una mirada profunda,  
-        sin evasión.
-    </p>
-</section>
-
-<!-- CTA -->
-<section class="section cta fade">
-    <h2>Aplicar para un proceso</h2>
-
-    <p>
-        Cada proceso inicia con una solicitud previa.  
-        Si sientes que este espacio es para ti, puedes comenzar aquí.
-    </p>
-
-    <a href="#" class="btn">Iniciar solicitud</a>
-
-    <div class="private-link">
-        <a href="https://wa.me/529984943352" target="_blank">
-            Acceso directo (solo si ya decidiste comenzar)
-        </a>
-    </div>
-</section>
-
-<footer>
-    © 2026 · Acompañamiento Existencial · Cancún
-</footer>
-
 <script>
-const faders = document.querySelectorAll('.fade');
+document.getElementById("premiumForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.2 });
+    // Aquí podrías guardar datos (futuro upgrade)
 
-faders.forEach(el => observer.observe(el));
+    window.location.href = "https://calendar.app.google/J1Bbm51noAfBEdJ69";
+});
 </script>
-
-</body>
-</html>
