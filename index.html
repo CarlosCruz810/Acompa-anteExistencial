@@ -1,128 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Cruz | Acompañante Existencial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --oro: #C5A059;
-            --azul-profundo: #1A2B3C;
-            --overlay: rgba(10, 20, 30, 0.85); 
-        }
-        
-        body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: white; scroll-behavior: smooth; background-color: #0a141e; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Cruz | Acompañante Existencial</title>
 
-        /* 1. FONDO GLOBAL FIJO (EL BOSQUE) */
-        .site-background {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(var(--overlay), var(--overlay)), 
-                        url('https://images.unsplash.com/photo-1505833190673-3cb19ee2f749?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            z-index: -10; /* Siempre al fondo */
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 
-        section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+<style>
+:root {
+    --hueso: #F5F5F0;
+    --oro: #C5A059;
+    --azul: #1A2B3C;
+    --blanco-puro: #FFFFFF;
+}
 
-        /* 2. LOGOTIPO MONUMENTAL (IMPACTO ELITE) */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .logo-monumental { 
-            width: 75vw; /* 75% del ancho de pantalla */
-            max-width: 1100px; 
-            height: auto; 
-            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.8)); 
-            margin-bottom: 30px;
-        }
-        .tagline { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-style: italic; margin-bottom: 50px; text-shadow: 0 2px 15px rgba(0,0,0,0.7); }
-        
-        .btn-gold {
-            padding: 22px 70px; background: var(--azul-profundo); color: white; text-decoration: none; 
-            letter-spacing: 5px; border: 1px solid var(--azul-profundo); transition: 0.5s; font-size: 0.9rem;
-        }
-        .btn-gold:hover { background: white; color: var(--azul-profundo); border-color: white; }
+/* 🔥 FONDO GLOBAL (CLAVE) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 
-        /* 3. CONTENEDORES TRASLÚCIDOS Y FOTOS DE PERFIL */
-        .flex-container { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 80px; text-align: left; }
-        
-        .profile-frame { 
-            width: 420px; height: 580px; overflow: hidden; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1);
-        }
-        .profile-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    background: linear-gradient(rgba(26,43,60,0.75), rgba(26,43,60,0.75)),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-        .text-block { flex: 1; min-width: 320px; }
-        .gold-label { color: var(--oro); text-transform: uppercase; letter-spacing: 6px; font-size: 0.9rem; margin-bottom: 25px; display: block; }
+/* Para que las secciones no tapen el fondo */
+section {
+    background: transparent;
+}
 
-        /* SECCIÓN TRASLÚCIDA (ENFOQUE) */
-        .traslucid-section { background: rgba(0,0,0,0.4); max-width: 100%; width: 100%; margin: 0; }
+h1, h2, h3, .serif {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
 
-        /* IMAGEN CONSULTORIO */
-        .consul-img { width: 100%; max-width: 950px; height: auto; box-shadow: 0 25px 70px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1); }
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-        footer { text-align: center; padding: 100px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .social-links { margin: 50px 0; display: flex; justify-content: center; gap: 45px; font-size: 2.2rem; }
-        .social-links a { color: var(--oro); transition: 0.4s; }
-        .social-links a:hover { transform: translateY(-8px); color: white; }
-    </style>
+    padding: 0 20px;
+}
+
+/* 🔥 LOGO 75% DEL VIEWPORT */
+.logo-img {
+    height: 75vh; /* clave */
+    max-width: 90%;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.4));
+}
+
+.tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #fdfdfd;
+    max-width: 700px;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.btn-meet {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: var(--azul);
+    color: var(--hueso);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: 0.4s;
+    border: 1px solid var(--azul);
+}
+
+.btn-meet:hover {
+    background-color: var(--blanco-puro);
+    color: var(--azul);
+    border-color: var(--blanco-puro);
+}
+
+/* SOBRE MI */
+.sobre-mi {
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.perfil-foto { 
+    width: 380px;
+    height: 500px;
+    background: url('perfil.png') center/cover;
+    border-radius: 2px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.bio {
+    flex: 1;
+    min-width: 350px;
+    color: var(--hueso);
+}
+
+.bio h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.found-title {
+    font-size: 1.1rem;
+    color: var(--oro);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+/* ENFOQUE */
+.enfoque {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+.enfoque-texto {
+    flex: 1;
+    padding: 80px;
+    min-width: 350px;
+    color: var(--hueso);
+}
+
+.enfoque-img {
+    flex: 1;
+    min-width: 400px;
+    height: 600px;
+    background: url('perfil2.jpg') center/cover;
+}
+
+.enfoque h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--oro);
+}
+
+/* FOOTER */
+footer {
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--hueso);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+</style>
 </head>
+
 <body>
 
-    <div class="site-background"></div>
+<section class="hero">
+    <img src="logo.png" alt="Carlos Cruz Logo" class="logo-img">
+    <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
+    <a href="https://wa.me/529984943352" class="btn-meet">SOLICITAR ACOMPAÑAMIENTO</a>
+</section>
 
-    <section class="hero">
-        <img src="logo.png" alt="Carlos Cruz" class="logo-monumental">
-        <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
-        <a href="https://wa.me/529984943352" class="btn-gold">SOLICITAR ACOMPAÑAMIENTO</a>
-    </section>
+<section class="sobre-mi">
+    <div class="perfil-foto"></div>
+    <div class="bio">
+        <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
+        <h2>Carlos Cruz</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; font-weight: 300;">
+            Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.
+        </p>
+    </div>
+</section>
 
-    <section>
-        <div class="flex-container">
-            <div class="profile-frame">
-                <img src="perfil.png" alt="Carlos Cruz Perfil">
-            </div>
-            <div class="text-block">
-                <span class="gold-label">Fundador de Tierra, Semilla y Fruto</span>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 3.8rem; margin: 0 0 25px 0;">Carlos Cruz</h2>
-                <p style="font-size: 1.25rem; line-height: 2.1; font-weight: 300; opacity: 0.95;">
-                    Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.
-                </p>
-            </div>
-        </div>
-    </section>
+<section class="enfoque">
+    <div class="enfoque-texto">
+        <h2>Radiografía de lo Invisible</h2>
+        <p style="font-weight: 200; line-height: 2; opacity: 0.9;">
+            Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer.
+        </p>
+    </div>
+    <div class="enfoque-img"></div>
+</section>
 
-    <section class="traslucid-section">
-        <div class="flex-container" style="flex-direction: row-reverse; max-width: 1200px; margin: 0 auto; padding: 100px 0;">
-            <div class="profile-frame">
-                <img src="Copia de Copia de Carlos Cruz1.jpg" alt="Enfoque Existencial">
-            </div>
-            <div class="text-block">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 3.2rem; color: var(--oro); margin-bottom: 30px;">Radiografía de lo Invisible</h2>
-                <p style="font-size: 1.25rem; line-height: 2.1; font-weight: 300;">
-                    Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section style="text-align: center;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--oro); margin-bottom: 45px;">Un Refugio para la Escucha</h2>
-        <img src="consul2.png" alt="Consultorio" class="consul-img">
-    </section>
-
-    <footer>
-        <h3 style="font-family: 'Playfair Display', serif; letter-spacing: 10px; font-size: 2.2rem;">CARLOS CRUZ</h3>
-        <div class="social-links">
-            <a href="https://facebook.com/carlos.cruz.psic" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/carlos.cruz.psic" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/529984943352" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p style="font-size: 0.8rem; opacity: 0.4; letter-spacing: 4px;">© 2026 ACOMPAÑAMIENTO EXISTENCIAL | CANCÚN, MÉXICO</p>
-    </footer>
+<footer>
+    <h3 class="serif" style="letter-spacing: 4px;">CARLOS CRUZ</h3>
+    <p>WhatsApp: +52 998 494 3352</p>
+    <p style="opacity: 0.4; font-size: 0.7rem; margin-top: 40px;">
+        © 2026 ACOMPAÑAMIENTO EXISTENCIAL | CANCÚN, MÉXICO
+    </p>
+</footer>
 
 </body>
 </html>
