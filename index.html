@@ -1,37 +1,105 @@
-<section class="section fade">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Cruz | Acompañamiento Existencial</title>
 
-<h2>Solicitud de proceso</h2>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-<p>
-Este espacio es limitado y cada solicitud es revisada personalmente.  
-Responde con honestidad.
-</p>
+<style>
+:root {
+    --gold: #C5A059;
+    --text: #EDEBE6;
+}
 
-<form id="premiumForm">
+/* FONDO GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
 
-<input type="text" placeholder="Nombre completo" required>
+    background: linear-gradient(rgba(5,10,15,0.85), rgba(5,10,15,0.95)),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
 
-<textarea placeholder="¿Qué estás atravesando en este momento?" required></textarea>
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-<textarea placeholder="¿Por qué sientes que ahora es el momento de trabajarlo?" required></textarea>
+/* SECCIONES */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 20px;
+    text-align: center;
+}
 
-<textarea placeholder="¿Qué has intentado antes?" required></textarea>
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-<textarea placeholder="¿Qué esperas encontrar en este proceso?" required></textarea>
+/* LOGO */
+.logo-img {
+    height: 50vh;
+}
 
-<select required>
-<option value="">¿Estás dispuesto a un proceso profundo?</option>
-<option>Sí</option>
-<option>No</option>
-</select>
+/* TEXTO */
+.tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    max-width: 650px;
+    margin: 40px 0;
+    line-height: 1.5;
+}
 
-<input type="text" placeholder="Email o WhatsApp" required>
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
 
-<button type="submit" class="btn">Enviar solicitud</button>
+p {
+    opacity: 0.75;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto;
+}
 
-</form>
+.subtitle {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
 
-</section>
+.divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 40px auto;
+}
+
+/* BOTÓN */
+.btn {
+    padding: 14px 45px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* FORMULARIO */
 form {
     max-width: 600px;
     margin: 40px auto 0;
@@ -45,24 +113,133 @@ input, textarea, select {
     border: 1px solid rgba(255,255,255,0.2);
     padding: 14px;
     color: white;
-    font-family: 'Inter', sans-serif;
 }
 
 textarea {
     min-height: 100px;
-    resize: none;
 }
 
 input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: #C5A059;
+    border-color: var(--gold);
 }
+
+/* MENSAJE */
+.success {
+    display: none;
+    margin-top: 30px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 60px;
+    font-size: 0.7rem;
+    opacity: 0.4;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="logo.png" class="logo-img">
+    <p class="tagline">
+        Hay momentos en los que ya no se trata de seguir adelante…  
+        sino de entender por qué no puedes detenerte.
+    </p>
+    <a href="#form" class="btn">Solicitar proceso</a>
+</section>
+
+<!-- IDENTIFICACIÓN -->
+<section class="section">
+    <p>
+        Este espacio no es para todos.  
+        Es para quienes han intentado seguir funcionando…  
+        mientras algo dentro sigue sin resolverse.
+    </p>
+</section>
+
+<!-- POSICIONAMIENTO -->
+<section class="section">
+    <h2>Carlos Cruz</h2>
+    <div class="divider"></div>
+    <p>
+        Trabajo desde la profundidad y la presencia.  
+        Aquí no vienes a sentirte mejor…  
+        vienes a entender lo que realmente está ocurriendo.
+    </p>
+</section>
+
+<!-- FILTRO -->
+<section class="section">
+    <p>
+        Este proceso no es para alivio inmediato.  
+        Es para quienes están dispuestos a mirar con honestidad.
+    </p>
+</section>
+
+<!-- FORMULARIO -->
+<section class="section" id="form">
+    <h2>Solicitud de proceso</h2>
+
+    <form id="premiumForm">
+
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+        <textarea id="problema" placeholder="¿Qué estás atravesando en este momento?" required></textarea>
+
+        <textarea id="momento" placeholder="¿Por qué ahora?" required></textarea>
+
+        <textarea id="intentos" placeholder="¿Qué has intentado antes?" required></textarea>
+
+        <textarea id="espera" placeholder="¿Qué esperas encontrar?" required></textarea>
+
+        <select id="compromiso" required>
+            <option value="">¿Estás dispuesto a un proceso profundo?</option>
+            <option>Sí</option>
+            <option>No</option>
+        </select>
+
+        <input type="text" id="contacto" placeholder="WhatsApp o Email" required>
+
+        <button type="submit" class="btn">Enviar solicitud</button>
+
+    </form>
+
+    <div class="success" id="successMsg">
+        <p>
+            He leído tu solicitud.  
+            Si sientes claridad en tu decisión, puedes agendar aquí:
+        </p>
+        <br>
+        <a href="TU_LINK_CALENDAR" class="btn">Agendar espacio</a>
+    </div>
+</section>
+
+<footer>
+© 2026 · Acompañamiento Existencial · Cancún
+</footer>
+
 <script>
 document.getElementById("premiumForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    // Aquí podrías guardar datos (futuro upgrade)
+    let nombre = document.getElementById("nombre").value;
 
-    window.location.href = "https://calendar.app.google/J1Bbm51noAfBEdJ69";
+    let mensaje = `Hola, soy ${nombre}. He leído tu página y ya envié mi solicitud. Me interesa iniciar un proceso contigo.`;
+
+    let url = "https://wa.me/TU_NUMERO?text=" + encodeURIComponent(mensaje);
+
+    // Mostrar mensaje en página
+    document.getElementById("premiumForm").style.display = "none";
+    document.getElementById("successMsg").style.display = "block";
+
+    // Abrir WhatsApp en nueva pestaña
+    window.open(url, "_blank");
 });
 </script>
+
+</body>
+</html>
