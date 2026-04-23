@@ -15,16 +15,14 @@
         body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--hueso); color: var(--azul); scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
         
-        /* HERO SECTION - NUEVA IMAGEN DE FONDO ADOC AL DUELO/ACOMPAÑAMIENTO */
+        /* HERO SECTION - Imagen de fondo sobre duelo/paz */
         .hero {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            /* Usamos una imagen de interior cálido con luz suave y vista introspectiva */
-            background: linear-gradient(rgba(26, 43, 60, 0.5), rgba(26, 43, 60, 0.5)), 
-                        url('https://images.unsplash.com/photo-1598214813441-9456a9354964?q=80&w=2000&auto=format&fit=crop');
+            background: linear-gradient(rgba(26, 43, 60, 0.6), rgba(26, 43, 60, 0.6)), 
+                        url('https://images.unsplash.com/photo-1505833190673-3cb19ee2f749?q=80&w=2000&auto=format&fit=crop');
             background-size: cover; background-position: center; background-attachment: fixed; padding: 0 20px;
         }
         .logo-img { max-width: 350px; height: auto; margin-bottom: 30px; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
-        /* Ajustamos el color del tagline para asegurar legibilidad */
         .tagline { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: #fdfdfd; max-width: 700px; margin-bottom: 40px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
         .btn-meet {
             display: inline-block; padding: 18px 45px; background-color: var(--azul); color: var(--hueso);
@@ -36,7 +34,7 @@
         .sobre-mi { padding: 120px 20px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 60px; }
         .perfil-foto { 
             width: 400px; height: 500px; 
-            background: url('perfil.jpg') center/cover; /* AQUÍ APARECERÁ TU FOTO */
+            background: url('perfil.jpg') center/cover; /* Muestra tu foto subida */
             border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
         }
         .bio { flex: 1; min-width: 350px; }
@@ -66,23 +64,16 @@
             <p style="font-size: 1.1rem; line-height: 1.8; color: #555; font-weight: 300;">
                 Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia del estatus profesional con la calidez del acompañamiento fenomenológico.
             </p>
-            
             <div class="grid-servicios">
-                <div class="card">
-                    <h3>Existencia</h3>
-                    <p style="font-size: 0.9rem;">Acompañamiento en crisis de sentido y vacío profundo.</p>
-                </div>
-                <div class="card">
-                    <h3>Tanatología</h3>
-                    <p style="font-size: 0.9rem;">Apoyo especializado en procesos de duelo y pérdida.</p>
-                </div>
+                <div class="card"><h3>Existencia</h3><p>Acompañamiento en crisis de sentido.</p></div>
+                <div class="card"><h3>Tanatología</h3><p>Apoyo especializado en duelo y pérdida.</p></div>
             </div>
         </div>
     </section>
 
     <footer>
         <h3 class="serif" style="letter-spacing: 4px;">CARLOS CRUZ</h3>
-        <p style="font-weight: 200; margin: 20px 0;">Cancún, México | WhatsApp: +52 998 494 3352</p>
+        <p>WhatsApp: +52 998 494 3352</p>
         <p style="opacity: 0.4; font-size: 0.7rem;">© 2026 RADIOGRAFÍA DE LO INVISIBLE</p>
     </footer>
 
