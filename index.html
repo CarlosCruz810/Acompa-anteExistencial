@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carlos Cruz | Acompañamiento Existencial</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -16,10 +16,10 @@
 
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--hueso);
 
-    background: linear-gradient(rgba(10,20,30,0.8), rgba(10,20,30,0.95)),
+    background: linear-gradient(rgba(10,20,30,0.85), rgba(10,20,30,0.98)),
     url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
 
     background-size: cover;
@@ -40,60 +40,52 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
-/* LOGO */
 .logo-img {
-    height: 70vh;
+    height: 65vh;
     max-width: 90%;
     object-fit: contain;
 }
 
-/* FRASE */
 .tagline {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
-    margin: 20px 0 40px;
+    max-width: 600px;
+    line-height: 1.4;
     opacity: 0.9;
 }
 
-/* BOTÓN PRINCIPAL */
+/* BOTÓN PREMIUM */
 .btn-main {
-    padding: 16px 45px;
-    border: 1px solid rgba(255,255,255,0.3);
+    padding: 16px 50px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.2);
     text-decoration: none;
     color: var(--hueso);
     letter-spacing: 2px;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    transition: 0.4s ease;
     position: relative;
-    overflow: hidden;
-    transition: 0.4s;
-}
-
-.btn-main::before {
-    content: "";
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: var(--oro);
-    transition: 0.4s;
-    z-index: -1;
-}
-
-.btn-main:hover::before {
-    left: 0;
 }
 
 .btn-main:hover {
-    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(197,160,89,0.3);
+    border-color: var(--oro);
+    color: var(--oro);
 }
 
 /* GLASS */
 .glass {
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 60px;
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 70px;
+    border-radius: 20px;
 }
 
 /* SOBRE MI */
@@ -105,61 +97,58 @@ section {
 }
 
 .perfil-foto {
-    width: 350px;
-    height: 480px;
+    width: 320px;
+    height: 440px;
     background: url('perfil.png') center/cover;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
 }
 
 .bio h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
 }
 
 .found-title {
     color: var(--oro);
     letter-spacing: 3px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
 }
 
-/* SECCIÓN FINAL */
+/* CTA FINAL */
 .cta-final {
     text-align: center;
 }
 
 .cta-final h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     margin-bottom: 20px;
 }
 
 .cta-final p {
-    opacity: 0.8;
+    opacity: 0.85;
     margin-bottom: 40px;
 }
 
 /* WHATSAPP */
-.whatsapp {
-    margin-top: 40px;
-}
-
 .whatsapp a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--hueso);
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.05);
     text-decoration: none;
-    opacity: 0.8;
+    color: var(--hueso);
     transition: 0.3s;
 }
 
 .whatsapp a:hover {
-    opacity: 1;
-}
-
-.whatsapp svg {
-    width: 22px;
-    height: 22px;
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -167,12 +156,13 @@ footer {
     text-align: center;
     padding: 60px 20px;
     opacity: 0.6;
+    font-size: 0.9rem;
 }
 
-/* ANIMACIÓN */
+/* ANIMACIONES */
 .fade {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(60px);
     transition: 1.2s ease;
 }
 
@@ -181,38 +171,37 @@ footer {
     transform: translateY(0);
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
-    .logo-img { height: 50vh; }
-    .perfil-foto { width: 100%; height: 400px; }
+    .logo-img { height: 45vh; }
+    .perfil-foto { width: 100%; height: 380px; }
+    section { padding: 80px 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
     <img src="logo.png" class="logo-img">
-    <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
+    <p class="tagline">Un refugio para el dolor; un espacio para la existencia.</p>
     <a href="TU_LINK_AQUI" class="btn-main">AGENDAR ENCUENTRO</a>
 </section>
 
-<!-- SOBRE MI -->
 <section class="glass fade">
     <div class="sobre-mi">
         <div class="perfil-foto"></div>
-        <div>
-            <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
+        <div class="bio">
+            <p class="found-title">Fundador del Círculo de Acompañamiento Existencial</p>
             <h2>Carlos Cruz</h2>
             <p>
-                Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible.
-                Acompaño procesos donde el dolor se transforma en posibilidad.
+                Dedicado a explorar lo invisible en cada historia humana.
+                Acompañando procesos donde el dolor se transforma en sentido y posibilidad.
             </p>
         </div>
     </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="glass cta-final fade">
     <h2>Este puede ser el inicio de algo distinto</h2>
     <p>
@@ -222,14 +211,9 @@ footer {
 
     <a href="TU_LINK_AQUI" class="btn-main">AGENDAR AHORA</a>
 
-    <!-- WHATSAPP -->
     <div class="whatsapp">
         <a href="https://wa.me/529984943352" target="_blank">
-            <!-- SVG WhatsApp -->
-            <svg viewBox="0 0 32 32" fill="currentColor">
-                <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.3.7 4.5 2 6.4L4 29l7.9-2.1c1.8 1 3.8 1.5 6.1 1.5 6.6 0 12-5.3 12-11.8S22.6 3 16 3zm0 21.5c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.7 1.2 1.3-4.5-.3-.4c-1.2-1.7-1.9-3.7-1.9-5.8C4.5 8.4 9 4 16 4s11.5 4.4 11.5 9.8S23 24.5 16 24.5zm6.3-7.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1-.4.2-.7.1c-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.3 3.2 1.5 3.4c.2.2 2.5 3.8 6.1 5.2.8.3 1.5.5 2 .6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2.1-1.3.3-.6.3-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/>
-            </svg>
-            Contactar por WhatsApp
+            📱 Contactar por WhatsApp
         </a>
     </div>
 </section>
@@ -247,7 +231,7 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('visible');
         }
     });
-});
+}, { threshold: 0.2 });
 
 faders.forEach(el => observer.observe(el));
 </script>
