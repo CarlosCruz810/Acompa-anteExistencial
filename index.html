@@ -5,32 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carlos Cruz | Acompañamiento Existencial</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --hueso: #F5F5F0;
-    --oro: #C5A059;
-    --azul: #0F1C2A;
+    --gold: #C5A059;
+    --bg: #0A0F14;
+    --text: #EDEBE6;
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    color: var(--hueso);
-
-    background: linear-gradient(rgba(10,20,30,0.85), rgba(10,20,30,0.98)),
-    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-section {
-    padding: 120px 20px;
-    max-width: 1100px;
-    margin: auto;
+    color: var(--text);
+    background: var(--bg);
 }
 
 /* HERO */
@@ -40,186 +28,211 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    padding: 40px;
+    text-align: center;
 }
 
 .logo-img {
-    height: 65vh;
-    max-width: 90%;
-    object-fit: contain;
+    height: 55vh;
+    opacity: 0.9;
 }
 
 .tagline {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    text-align: center;
+    font-size: 2rem;
     max-width: 600px;
-    line-height: 1.4;
-    opacity: 0.9;
+    line-height: 1.5;
+    margin: 40px 0;
 }
 
-/* BOTÓN PREMIUM */
-.btn-main {
-    padding: 16px 50px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.2);
+/* BOTÓN LUJO */
+.btn {
+    padding: 14px 40px;
+    border: 1px solid rgba(255,255,255,0.15);
     text-decoration: none;
-    color: var(--hueso);
+    color: var(--text);
     letter-spacing: 2px;
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.05);
-    transition: 0.4s ease;
-    position: relative;
-}
-
-.btn-main:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(197,160,89,0.3);
-    border-color: var(--oro);
-    color: var(--oro);
-}
-
-/* GLASS */
-.glass {
-    backdrop-filter: blur(16px);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 70px;
-    border-radius: 20px;
-}
-
-/* SOBRE MI */
-.sobre-mi {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 60px;
-    align-items: center;
-}
-
-.perfil-foto {
-    width: 320px;
-    height: 440px;
-    background: url('perfil.png') center/cover;
-    border-radius: 12px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
-
-.bio h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
-    margin-bottom: 10px;
-}
-
-.found-title {
-    color: var(--oro);
-    letter-spacing: 3px;
     font-size: 0.8rem;
-    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: 0.4s;
 }
 
-/* CTA FINAL */
-.cta-final {
+.btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* SECCIÓN */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 20px;
+}
+
+/* SOBRE */
+.about {
     text-align: center;
 }
 
-.cta-final h2 {
+.about h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    margin-bottom: 30px;
+}
+
+.about p {
+    opacity: 0.75;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* EXPERIENCIA */
+.experience {
+    text-align: center;
+}
+
+.experience h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.cta-final p {
-    opacity: 0.85;
+.experience p {
+    opacity: 0.7;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* DIVISOR */
+.divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 40px auto;
+    opacity: 0.5;
+}
+
+/* CTA FINAL */
+.cta {
+    text-align: center;
+}
+
+.cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    opacity: 0.7;
     margin-bottom: 40px;
 }
 
-/* WHATSAPP */
-.whatsapp a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 18px;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.05);
-    text-decoration: none;
-    color: var(--hueso);
-    transition: 0.3s;
+/* WHATSAPP DISCRETO */
+.private-link {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    opacity: 0.5;
 }
 
-.whatsapp a:hover {
-    background: rgba(255,255,255,0.1);
-    transform: scale(1.05);
+.private-link a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.private-link a:hover {
+    opacity: 1;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 60px 20px;
-    opacity: 0.6;
-    font-size: 0.9rem;
+    padding: 60px;
+    font-size: 0.7rem;
+    opacity: 0.4;
 }
 
-/* ANIMACIONES */
+/* ANIMACIÓN SUAVE */
 .fade {
     opacity: 0;
-    transform: translateY(60px);
-    transition: 1.2s ease;
+    transform: translateY(40px);
+    transition: 1.5s ease;
 }
 
 .visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .logo-img { height: 45vh; }
-    .perfil-foto { width: 100%; height: 380px; }
-    section { padding: 80px 20px; }
-}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
     <img src="logo.png" class="logo-img">
-    <p class="tagline">Un refugio para el dolor; un espacio para la existencia.</p>
-    <a href="TU_LINK_AQUI" class="btn-main">AGENDAR ENCUENTRO</a>
+    <p class="tagline">
+        Un espacio donde el dolor deja de ser ruido…  
+        y comienza a tener sentido.
+    </p>
+    <a href="#" class="btn">Solicitar proceso</a>
 </section>
 
-<section class="glass fade">
-    <div class="sobre-mi">
-        <div class="perfil-foto"></div>
-        <div class="bio">
-            <p class="found-title">Fundador del Círculo de Acompañamiento Existencial</p>
-            <h2>Carlos Cruz</h2>
-            <p>
-                Dedicado a explorar lo invisible en cada historia humana.
-                Acompañando procesos donde el dolor se transforma en sentido y posibilidad.
-            </p>
-        </div>
-    </div>
-</section>
+<!-- SOBRE -->
+<section class="section about fade">
+    <p class="subtitle">Fundador de Tierra, Semilla y Fruto</p>
+    <h2>Carlos Cruz</h2>
 
-<section class="glass cta-final fade">
-    <h2>Este puede ser el inicio de algo distinto</h2>
+    <div class="divider"></div>
+
     <p>
-        Si sientes que es momento de mirar hacia dentro con acompañamiento,
-        puedes agendar un espacio conmigo.
+        Psicólogo y tanatólogo.  
+        Trabajo con procesos humanos que no encuentran lugar en lo cotidiano.  
+        Acompaño desde la presencia, no desde la técnica.
+    </p>
+</section>
+
+<!-- EXPERIENCIA -->
+<section class="section experience fade">
+    <h2>No es terapia convencional</h2>
+
+    <div class="divider"></div>
+
+    <p>
+        Este espacio no es para todos.  
+        Es para quienes están listos para sostener una mirada profunda,  
+        sin evasión.
+    </p>
+</section>
+
+<!-- CTA -->
+<section class="section cta fade">
+    <h2>Aplicar para un proceso</h2>
+
+    <p>
+        Cada proceso inicia con una solicitud previa.  
+        Si sientes que este espacio es para ti, puedes comenzar aquí.
     </p>
 
-    <a href="TU_LINK_AQUI" class="btn-main">AGENDAR AHORA</a>
+    <a href="#" class="btn">Iniciar solicitud</a>
 
-    <div class="whatsapp">
+    <div class="private-link">
         <a href="https://wa.me/529984943352" target="_blank">
-            📱 Contactar por WhatsApp
+            Acceso directo (solo si ya decidiste comenzar)
         </a>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 | Acompañamiento Existencial | Cancún</p>
+    © 2026 · Acompañamiento Existencial · Cancún
 </footer>
 
 <script>
