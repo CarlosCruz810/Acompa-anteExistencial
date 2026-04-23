@@ -10,13 +10,12 @@
         :root {
             --oro: #C5A059;
             --azul: #1A2B3C;
-            --blanco: #FFFFFF;
             --overlay: rgba(10, 20, 30, 0.85); 
         }
         
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: white; scroll-behavior: smooth; background-color: #0a141e; }
 
-        /* CAPA DE FONDO GLOBAL FIJO */
+        /* 1. FONDO GLOBAL FIJO (INAMOVIBLE) */
         .site-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(var(--overlay), var(--overlay)), 
@@ -24,43 +23,42 @@
             background-size: cover; background-position: center; z-index: -10;
         }
 
-        section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; position: relative; }
-        h2, .serif { font-family: 'Playfair Display', serif; }
+        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
 
-        /* HERO - LOGOTIPO MONUMENTAL (MÁS DEL 60% DE LA PANTALLA) */
+        /* 2. LOGO MONUMENTAL (MÁS DE LA MITAD DE PANTALLA) */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .logo-main { 
-            width: 70vw; /* 70% del ancho de pantalla */
-            max-width: 1050px; height: auto; margin-bottom: 40px; 
-            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.7)); 
+            width: 75vw; /* 75% del ancho de la pantalla */
+            max-width: 1100px; height: auto; 
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.8)); 
         }
-        .tagline { font-size: 2.2rem; font-style: italic; margin-bottom: 50px; text-shadow: 0 2px 15px rgba(0,0,0,0.8); }
-        .btn-gold {
-            padding: 22px 70px; background: var(--azul); color: white; text-decoration: none; 
-            letter-spacing: 5px; border: 1px solid var(--azul); transition: 0.5s; font-size: 0.85rem;
-        }
-        .btn-gold:hover { background: white; color: var(--azul); border-color: white; }
-
-        /* CONTENEDORES DE IMÁGENES DE PERFIL */
-        .flex-box { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 80px; text-align: left; }
+        .tagline { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-style: italic; margin: 40px 0; text-shadow: 0 2px 15px rgba(0,0,0,0.7); }
         
-        .img-wrapper { 
-            width: 420px; height: 580px; overflow: hidden; 
-            box-shadow: 0 35px 70px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.1);
+        .btn-gold {
+            padding: 20px 60px; background: var(--azul); color: white; text-decoration: none; 
+            letter-spacing: 4px; border: 1px solid var(--azul); transition: 0.4s;
         }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .btn-gold:hover { background: white; color: var(--azul); }
 
-        .text-side { flex: 1; min-width: 320px; }
-        .gold-label { color: var(--oro); text-transform: uppercase; letter-spacing: 6px; font-size: 0.9rem; margin-bottom: 25px; display: block; }
+        /* 3. CONTENEDORES DE IMÁGENES DE PERFIL */
+        .flex-box { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 60px; text-align: left; }
+        
+        .img-card { 
+            width: 400px; height: 550px; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.9); 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        /* SECCIÓN ENFOQUE - FONDO OSCURECIDO */
-        .enfoque-area { background: rgba(0,0,0,0.5); max-width: 100%; width: 100%; margin: 0; }
+        .text-content { flex: 1; min-width: 320px; }
+        .label-gold { color: var(--oro); text-transform: uppercase; letter-spacing: 5px; font-size: 0.9rem; margin-bottom: 20px; display: block; }
 
-        /* FOOTER */
-        footer { text-align: center; padding: 100px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; }
-        .social-icons { margin: 50px 0; display: flex; justify-content: center; gap: 45px; font-size: 2.2rem; }
-        .social-icons a { color: var(--oro); transition: 0.4s; }
-        .social-icons a:hover { transform: translateY(-8px); color: white; }
+        /* SECCIÓN OSCURECIDA PARA CONTRASTE */
+        .bg-darken { background: rgba(0,0,0,0.5); max-width: 100%; width: 100%; margin: 0; }
+
+        footer { text-align: center; padding: 100px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .social-icons { margin: 40px 0; display: flex; justify-content: center; gap: 40px; font-size: 2rem; }
+        .social-icons a { color: var(--oro); transition: 0.3s; }
     </style>
 </head>
 <body>
@@ -68,54 +66,53 @@
     <div class="site-bg"></div>
 
     <section class="hero">
-        <img src="logo.png" alt="Carlos Cruz" class="logo-main">
+        <img src="logo.png" alt="Logo Carlos Cruz" class="logo-main">
         <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
         <a href="https://wa.me/529984943352" class="btn-gold">SOLICITAR ACOMPAÑAMIENTO</a>
     </section>
 
     <section>
         <div class="flex-box">
-            <div class="img-wrapper">
-                <img src="perfil.png" alt="Carlos Cruz">
+            <div class="img-card">
+                <img src="perfil.png" alt="Carlos Cruz Perfil Original">
             </div>
-            <div class="text-side">
-                <span class="gold-label">Fundador de Tierra, Semilla y Fruto</span>
-                <h2 style="font-size: 3.8rem; margin: 0 0 25px 0;">Carlos Cruz</h2>
-                <p style="font-size: 1.25rem; line-height: 2.1; font-weight: 300; opacity: 0.95;">
-                    Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.
+            <div class="text-content">
+                <span class="label-gold">Fundador de Tierra, Semilla y Fruto</span>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0 0 20px 0;">Carlos Cruz</h2>
+                <p style="font-size: 1.2rem; line-height: 2; font-weight: 300;">
+                    Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="enfoque-area">
-        <div class="flex-box" style="flex-direction: row-reverse; max-width: 1200px; margin: 0 auto; padding: 120px 0;">
-            <div class="img-wrapper">
-                <img src="Copia de Copia de Carlos Cruz1.jpg" alt="Enfoque">
+    <section class="bg-darken">
+        <div class="flex-box" style="flex-direction: row-reverse; max-width: 1200px; margin: 0 auto; padding: 100px 0;">
+            <div class="img-card">
+                <img src="Copia de Copia de Carlos Cruz1.jpg" alt="Carlos Cruz Enfoque">
             </div>
-            <div class="text-side">
-                <h2 style="font-size: 3.2rem; color: var(--oro); margin-bottom: 30px;">Radiografía de lo Invisible</h2>
-                <p style="font-size: 1.25rem; line-height: 2.1; font-weight: 300;">
-                    Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer. Un espacio seguro, profesional y profundamente humano.
+            <div class="text-content">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--oro); margin-bottom: 30px;">Radiografía de lo Invisible</h2>
+                <p style="font-size: 1.2rem; line-height: 2; font-weight: 300;">
+                    Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. Un espacio seguro, profesional y profundamente humano.
                 </p>
             </div>
         </div>
     </section>
 
     <section style="text-align: center;">
-        <h2 style="font-size: 3rem; color: var(--oro); margin-bottom: 45px;">Un Refugio para la Escucha</h2>
-        <img src="consul2.png" alt="Consultorio" style="width: 100%; max-width: 950px; box-shadow: 0 25px 70px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1);">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--oro); margin-bottom: 40px;">Un Refugio para la Escucha</h2>
+        <img src="consul2.png" alt="Consultorio Carlos Cruz" style="width: 100%; max-width: 900px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);">
     </section>
 
     <footer>
-        <h3 class="serif" style="letter-spacing: 10px; font-size: 2.2rem; margin-bottom: 15px;">CARLOS CRUZ</h3>
-        <p style="opacity: 0.7; font-size: 1.1rem;">Cancún, México | WhatsApp: +52 998 494 3352</p>
+        <h3 style="font-family: 'Playfair Display', serif; letter-spacing: 8px; font-size: 2rem;">CARLOS CRUZ</h3>
         <div class="social-icons">
             <a href="https://facebook.com/carlos.cruz.psic" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://instagram.com/carlos.cruz.psic" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/529984943352" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="font-size: 0.75rem; opacity: 0.4; letter-spacing: 4px; margin-top: 50px;">© 2026 ACOMPAÑAMIENTO EXISTENCIAL</p>
+        <p style="font-size: 0.7rem; opacity: 0.4; letter-spacing: 3px;">© 2026 ACOMPAÑAMIENTO EXISTENCIAL</p>
     </footer>
 
 </body>
