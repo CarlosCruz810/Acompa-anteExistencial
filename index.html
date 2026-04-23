@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Cruz | Acompañante Existencial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hueso: #F5F5F0;
+            --oro: #C5A059;
+            --azul: #1A2B3C;
+            --texto: #333;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--hueso);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+        h1, h2, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(rgba(245, 245, 240, 0.8), rgba(245, 245, 240, 0.8)), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=2000'); /* Imagen de paz */
+            background-size: cover;
+            background-position: center;
+        }
+        .logo-text {
+            font-size: 3rem;
+            color: var(--azul);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--oro);
+            font-style: italic;
+            max-width: 600px;
+        }
+        .content-section {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .btn-gold {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: var(--oro);
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-gold:hover {
+            background-color: var(--azul);
+        }
+        footer {
+            padding: 40px;
+            background-color: var(--azul);
+            color: var(--hueso);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo-text">CARLOS CRUZ</h1>
+        <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
+        <a href="https://wa.me/529987593954" class="btn-gold">ENTRAR AL REFUGIO</a>
+    </header>
+
+    <section class="content-section">
+        <h2 style="color: var(--oro);">El Arte de Acompañar</h2>
+        <p class="serif" style="font-size: 1.2rem; font-style: italic;">
+            "No buscamos reparar lo que está roto, sino dar sentido a lo que se vive."
+        </p>
+        <p>
+            Soy Carlos Cruz, psicólogo y tanatólogo. Mi labor es ofrecerte una presencia consciente y un acompañamiento fenomenológico donde podamos mirar juntos aquello que parece invisible: tu esencia frente al abismo.
+        </p>
+    </section>
+
+    <section class="content-section" style="background-color: white; padding: 60px 20px; border-radius: 5px;">
+        <h2 style="color: var(--azul);">Espacios de Encuentro</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px;">
+            <div>
+                <h3 style="color: var(--oro);">Tanatología</h3>
+                <p>Honrar la ausencia y aprender a vivir con el legado de lo que se ha ido.</p>
+            </div>
+            <div>
+                <h3 style="color: var(--oro);">Existencia</h3>
+                <p>Un diálogo profundo para quienes buscan sentido en medio del caos.</p>
+            </div>
+            <div>
+                <h3 style="color: var(--oro);">Círculo</h3>
+                <p>Un espacio colectivo para sentir en libertad y compartir el peso del alma.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Carlos Cruz | Acompañante Existencial</p>
+        <p>Cancún, México | WhatsApp: 998 494 3352</p>
+        <p style="opacity: 0.6; margin-top: 20px;">© 2026 Radiografía de lo Invisible</p>
+    </footer>
+
+</body>
+</html>
