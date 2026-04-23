@@ -15,15 +15,17 @@
         body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--hueso); color: var(--azul); scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
         
-        /* HERO SECTION */
+        /* HERO SECTION - NUEVA IMAGEN DE FONDO ADOC AL DUELO/ACOMPAÑAMIENTO */
         .hero {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(26, 43, 60, 0.4), rgba(26, 43, 60, 0.4)), 
-                        url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=2000');
+            /* Usamos una imagen de interior cálido con luz suave y vista introspectiva */
+            background: linear-gradient(rgba(26, 43, 60, 0.5), rgba(26, 43, 60, 0.5)), 
+                        url('https://images.unsplash.com/photo-1598214813441-9456a9354964?q=80&w=2000&auto=format&fit=crop');
             background-size: cover; background-position: center; background-attachment: fixed; padding: 0 20px;
         }
         .logo-img { max-width: 350px; height: auto; margin-bottom: 30px; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
-        .tagline { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: white; max-width: 700px; margin-bottom: 40px; }
+        /* Ajustamos el color del tagline para asegurar legibilidad */
+        .tagline { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: #fdfdfd; max-width: 700px; margin-bottom: 40px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
         .btn-meet {
             display: inline-block; padding: 18px 45px; background-color: var(--azul); color: var(--hueso);
             text-decoration: none; letter-spacing: 2px; font-size: 0.9rem; transition: 0.4s; border: 1px solid var(--azul);
