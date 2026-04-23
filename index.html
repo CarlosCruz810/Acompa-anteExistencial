@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carlos Cruz | Acompañante Existencial</title>
+<title>Carlos Cruz | Acompañamiento Existencial</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 
@@ -11,16 +11,15 @@
 :root {
     --hueso: #F5F5F0;
     --oro: #C5A059;
-    --azul: #1A2B3C;
+    --azul: #0F1C2A;
 }
 
-/* FONDO GLOBAL */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: var(--hueso);
 
-    background: linear-gradient(rgba(10,20,30,0.75), rgba(10,20,30,0.9)),
+    background: linear-gradient(rgba(10,20,30,0.8), rgba(10,20,30,0.95)),
     url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
 
     background-size: cover;
@@ -28,13 +27,9 @@ body {
     background-attachment: fixed;
 }
 
-/* SCROLL SUAVE */
-html { scroll-behavior: smooth; }
-
-/* SECCIONES */
 section {
     padding: 120px 20px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -52,32 +47,30 @@ section {
     height: 70vh;
     max-width: 90%;
     object-fit: contain;
-    animation: fadeIn 2s ease;
 }
 
 /* FRASE */
 .tagline {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
-    font-style: italic;
     text-align: center;
     margin: 20px 0 40px;
     opacity: 0.9;
 }
 
-/* BOTÓN PREMIUM */
-.btn-meet {
-    padding: 16px 40px;
+/* BOTÓN PRINCIPAL */
+.btn-main {
+    padding: 16px 45px;
     border: 1px solid rgba(255,255,255,0.3);
-    color: var(--hueso);
     text-decoration: none;
+    color: var(--hueso);
     letter-spacing: 2px;
     position: relative;
     overflow: hidden;
     transition: 0.4s;
 }
 
-.btn-meet::before {
+.btn-main::before {
     content: "";
     position: absolute;
     top: 0; left: -100%;
@@ -87,21 +80,20 @@ section {
     z-index: -1;
 }
 
-.btn-meet:hover::before {
+.btn-main:hover::before {
     left: 0;
 }
 
-.btn-meet:hover {
+.btn-main:hover {
     color: #000;
 }
 
-/* GLASS CARD */
+/* GLASS */
 .glass {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    padding: 50px;
-    border-radius: 6px;
+    padding: 60px;
 }
 
 /* SOBRE MI */
@@ -119,10 +111,6 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.bio {
-    flex: 1;
-}
-
 .bio h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
@@ -134,42 +122,65 @@ section {
     font-size: 0.9rem;
 }
 
-/* ENFOQUE */
-.enfoque {
-    margin-top: 100px;
+/* SECCIÓN FINAL */
+.cta-final {
+    text-align: center;
 }
 
-.enfoque h2 {
+.cta-final h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--oro);
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    margin-top: 40px;
+}
+
+.whatsapp a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--hueso);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.whatsapp a:hover {
+    opacity: 1;
+}
+
+.whatsapp svg {
+    width: 22px;
+    height: 22px;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 80px 20px;
-    opacity: 0.7;
+    padding: 60px 20px;
+    opacity: 0.6;
 }
 
-/* ANIMACIONES */
+/* ANIMACIÓN */
 .fade {
     opacity: 0;
     transform: translateY(40px);
     transition: 1.2s ease;
 }
 
-.fade.visible {
+.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95);}
-    to { opacity: 1; transform: scale(1);}
-}
-
-/* RESPONSIVE */
 @media(max-width:768px){
     .logo-img { height: 50vh; }
     .perfil-foto { width: 100%; height: 400px; }
@@ -179,40 +190,55 @@ footer {
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
     <img src="logo.png" class="logo-img">
     <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
-    <a href="https://wa.me/529984943352" class="btn-meet">SOLICITAR ACOMPAÑAMIENTO</a>
+    <a href="TU_LINK_AQUI" class="btn-main">AGENDAR ENCUENTRO</a>
 </section>
 
+<!-- SOBRE MI -->
 <section class="glass fade">
     <div class="sobre-mi">
         <div class="perfil-foto"></div>
-        <div class="bio">
-            <p class="found-title">Fundador del Círculo de Acompañamiento Existencial</p>
+        <div>
+            <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
             <h2>Carlos Cruz</h2>
             <p>
-                Dedicado a la arqueología del gesto de lo invisible, transformando el dolor en terreno fértil para la vida.
+                Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible.
+                Acompaño procesos donde el dolor se transforma en posibilidad.
             </p>
         </div>
     </div>
 </section>
 
-<section class="glass enfoque fade">
-    <h2>Radiografía de lo Invisible</h2>
+<!-- CTA FINAL -->
+<section class="glass cta-final fade">
+    <h2>Este puede ser el inicio de algo distinto</h2>
     <p>
-        Acompaño en procesos de duelo y crisis de sentido desde una perspectiva existencial.
-        No se trata de evitar el dolor, sino de habitarlo con profundidad.
+        Si sientes que es momento de mirar hacia dentro con acompañamiento,
+        puedes agendar un espacio conmigo.
     </p>
+
+    <a href="TU_LINK_AQUI" class="btn-main">AGENDAR AHORA</a>
+
+    <!-- WHATSAPP -->
+    <div class="whatsapp">
+        <a href="https://wa.me/529984943352" target="_blank">
+            <!-- SVG WhatsApp -->
+            <svg viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.3.7 4.5 2 6.4L4 29l7.9-2.1c1.8 1 3.8 1.5 6.1 1.5 6.6 0 12-5.3 12-11.8S22.6 3 16 3zm0 21.5c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.7 1.2 1.3-4.5-.3-.4c-1.2-1.7-1.9-3.7-1.9-5.8C4.5 8.4 9 4 16 4s11.5 4.4 11.5 9.8S23 24.5 16 24.5zm6.3-7.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1-.4.2-.7.1c-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.3 3.2 1.5 3.4c.2.2 2.5 3.8 6.1 5.2.8.3 1.5.5 2 .6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2.1-1.3.3-.6.3-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/>
+            </svg>
+            Contactar por WhatsApp
+        </a>
+    </div>
 </section>
 
 <footer>
-    <h3 style="letter-spacing:4px;">CARLOS CRUZ</h3>
-    <p>WhatsApp: +52 998 494 3352</p>
+    <p>© 2026 | Acompañamiento Existencial | Cancún</p>
 </footer>
 
 <script>
-/* SCROLL ANIMATION */
 const faders = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries => {
