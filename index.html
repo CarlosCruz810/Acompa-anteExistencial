@@ -14,9 +14,9 @@
             --overlay: rgba(10, 20, 30, 0.85); 
         }
         
-        body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: white; scroll-behavior: smooth; }
+        body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: white; scroll-behavior: smooth; background-color: #0a141e; }
 
-        /* FONDO GLOBAL INAMOVIBLE */
+        /* CAPA DE FONDO GLOBAL FIJO */
         .site-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(var(--overlay), var(--overlay)), 
@@ -27,38 +27,34 @@
         section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; position: relative; }
         h2, .serif { font-family: 'Playfair Display', serif; }
 
-        /* HERO - LOGOTIPO AGRANDADO (MÁS DEL 60% DE PANTALLA) */
+        /* HERO - LOGOTIPO MONUMENTAL (MÁS DEL 60% DE LA PANTALLA) */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .logo-main { 
-            width: 65vw; /* 65% del ancho de la pantalla */
-            max-width: 1000px; height: auto; margin-bottom: 40px; 
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6)); 
+            width: 70vw; /* 70% del ancho de pantalla */
+            max-width: 1050px; height: auto; margin-bottom: 40px; 
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.7)); 
         }
-        .tagline { font-size: 2.2rem; font-style: italic; margin-bottom: 50px; text-shadow: 0 2px 15px rgba(0,0,0,0.7); font-weight: 300; }
+        .tagline { font-size: 2.2rem; font-style: italic; margin-bottom: 50px; text-shadow: 0 2px 15px rgba(0,0,0,0.8); }
         .btn-gold {
             padding: 22px 70px; background: var(--azul); color: white; text-decoration: none; 
-            letter-spacing: 5px; border: 1px solid var(--azul); transition: 0.5s; font-size: 0.8rem;
+            letter-spacing: 5px; border: 1px solid var(--azul); transition: 0.5s; font-size: 0.85rem;
         }
         .btn-gold:hover { background: white; color: var(--azul); border-color: white; }
 
         /* CONTENEDORES DE IMÁGENES DE PERFIL */
         .flex-box { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 80px; text-align: left; }
         
-        .frame-img { 
+        .img-wrapper { 
             width: 420px; height: 580px; overflow: hidden; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.1);
         }
-        .frame-img img { width: 100%; height: 100%; object-fit: cover; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
         .text-side { flex: 1; min-width: 320px; }
-        .gold-title { color: var(--oro); text-transform: uppercase; letter-spacing: 6px; font-size: 0.9rem; margin-bottom: 25px; display: block; }
+        .gold-label { color: var(--oro); text-transform: uppercase; letter-spacing: 6px; font-size: 0.9rem; margin-bottom: 25px; display: block; }
 
-        /* SECCIÓN ENFOQUE (FONDO LIGERAMENTE MÁS OSCURO PARA CONTRASTE) */
-        .enfoque { background: rgba(0,0,0,0.4); max-width: 100%; width: 100%; margin: 0; }
-        .enfoque-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 80px; }
-
-        /* SECCIÓN CONSULTORIO */
-        .consul-img { width: 100%; max-width: 950px; height: auto; box-shadow: 0 25px 70px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1); }
+        /* SECCIÓN ENFOQUE - FONDO OSCURECIDO */
+        .enfoque-area { background: rgba(0,0,0,0.5); max-width: 100%; width: 100%; margin: 0; }
 
         /* FOOTER */
         footer { text-align: center; padding: 100px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; }
@@ -79,11 +75,11 @@
 
     <section>
         <div class="flex-box">
-            <div class="frame-img">
-                <img src="perfil.png" alt="Carlos Cruz Perfil">
+            <div class="img-wrapper">
+                <img src="perfil.png" alt="Carlos Cruz">
             </div>
             <div class="text-side">
-                <span class="gold-title">Fundador de Tierra, Semilla y Fruto</span>
+                <span class="gold-label">Fundador de Tierra, Semilla y Fruto</span>
                 <h2 style="font-size: 3.8rem; margin: 0 0 25px 0;">Carlos Cruz</h2>
                 <p style="font-size: 1.25rem; line-height: 2.1; font-weight: 300; opacity: 0.95;">
                     Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.
@@ -92,24 +88,23 @@
         </div>
     </section>
 
-    <section class="enfoque">
-        <div class="enfoque-inner">
+    <section class="enfoque-area">
+        <div class="flex-box" style="flex-direction: row-reverse; max-width: 1200px; margin: 0 auto; padding: 120px 0;">
+            <div class="img-wrapper">
+                <img src="Copia de Copia de Carlos Cruz1.jpg" alt="Enfoque">
+            </div>
             <div class="text-side">
                 <h2 style="font-size: 3.2rem; color: var(--oro); margin-bottom: 30px;">Radiografía de lo Invisible</h2>
                 <p style="font-size: 1.25rem; line-height: 2.1; font-weight: 300;">
                     Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer. Un espacio seguro, profesional y profundamente humano.
                 </p>
             </div>
-            <div class="frame-img">
-                <img src="Copia de Copia de Carlos Cruz1.jpg" alt="Enfoque Existencial">
-            </div>
         </div>
     </section>
 
     <section style="text-align: center;">
         <h2 style="font-size: 3rem; color: var(--oro); margin-bottom: 45px;">Un Refugio para la Escucha</h2>
-        <p style="margin-bottom: 50px; font-size: 1.2rem; opacity: 0.8;">Te ofrezco un espacio físico diseñado para la introspección y la contención.</p>
-        <img src="consul2.png" alt="Consultorio" class="consul-img">
+        <img src="consul2.png" alt="Consultorio" style="width: 100%; max-width: 950px; box-shadow: 0 25px 70px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1);">
     </section>
 
     <footer>
