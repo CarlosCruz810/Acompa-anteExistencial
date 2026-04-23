@@ -5,84 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carlos Cruz | Acompañante Existencial</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --hueso: #F5F5F0;
             --oro: #C5A059;
-            --azul: #1A2B3C;
+            --azul-profundo: #1A2B3C;
             --blanco-puro: #FFFFFF;
+            --overlay: rgba(26, 43, 60, 0.75); /* Capa oscura para legibilidad */
         }
-        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--hueso); color: var(--azul); scroll-behavior: smooth; overflow-x: hidden; }
+        
+        body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; height: 100%; scroll-behavior: smooth; color: white; }
+        
+        /* FONDO ÚNICO Y FIJO PARA TODA LA PÁGINA */
+        .site-background {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1505833190673-3cb19ee2f749?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center; background-attachment: fixed; z-index: -2;
+        }
+        .site-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--overlay); z-index: -1; }
+
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
         
-        /* HERO SECTION - Imagen evocadora de paz y trascendencia */
-        .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(26, 43, 60, 0.6), rgba(26, 43, 60, 0.6)), 
-                        url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover; background-position: center; background-attachment: fixed; padding: 0 20px;
+        section { padding: 120px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+
+        /* HEADER & HERO */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 0; padding-bottom: 0; }
+        .logo-img { max-width: 450px; height: auto; margin-bottom: 40px; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
+        .tagline { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; max-width: 750px; margin-bottom: 50px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+        .btn-gold {
+            display: inline-block; padding: 20px 50px; background-color: var(--azul-profundo); color: var(--hueso);
+            text-decoration: none; letter-spacing: 3px; font-size: 0.95rem; font-weight: 400; transition: 0.4s; border: 1px solid var(--azul-profundo);
         }
-        .logo-img { max-width: 320px; height: auto; margin-bottom: 30px; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
-        .tagline { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: #fdfdfd; max-width: 700px; margin-bottom: 40px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
-        .btn-meet {
-            display: inline-block; padding: 18px 45px; background-color: var(--azul); color: var(--hueso);
-            text-decoration: none; letter-spacing: 2px; font-size: 0.9rem; transition: 0.4s; border: 1px solid var(--azul);
-        }
-        .btn-meet:hover { background-color: var(--blanco-puro); color: var(--azul); border-color: var(--blanco-puro); }
+        .btn-gold:hover { background-color: var(--blanco-puro); color: var(--azul-profundo); border-color: var(--blanco-puro); }
 
         /* SECCIÓN SOBRE TI (Usando perfil.png) */
-        .sobre-mi { padding: 100px 20px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 60px; }
-        .perfil-foto { 
-            width: 380px; height: 500px; 
-            background: url('perfil.png') center/cover; 
-            border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-        }
+        .sobre-mi { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 60px; text-align: left; }
+        .perfil-foto { width: 400px; height: 500px; background: url('perfil.png') center/cover; border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
         .bio { flex: 1; min-width: 350px; }
-        .bio h2 { font-size: 2.8rem; color: var(--azul); margin-bottom: 10px; }
-        .found-title { font-size: 1.1rem; color: var(--oro); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; }
-        
-        /* SECCIÓN ENFOQUE (Usando perfil2.jpg) */
-        .enfoque { background-color: var(--azul); color: var(--hueso); display: flex; flex-wrap: wrap-reverse; align-items: center; }
-        .enfoque-texto { flex: 1; padding: 80px; min-width: 350px; }
-        .enfoque-img { flex: 1; min-width: 400px; height: 600px; background: url('perfil2.jpg') center/cover; }
-        .enfoque h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--oro); }
+        .bio h2 { font-size: 3rem; margin-bottom: 10px; color: var(--blanco-puro); }
+        .found-title { font-size: 1.15rem; color: var(--oro); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; }
+        .desc-text { font-size: 1.2rem; line-height: 2; font-weight: 300; color: #eee; }
 
-        footer { background-color: var(--azul); color: var(--hueso); padding: 80px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        /* SECCIÓN ENFOQUE (Usando perfil2.jpg) */
+        .enfoque { display: flex; flex-wrap: wrap-reverse; align-items: center; text-align: left; background-color: rgba(0,0,0,0.3); padding: 100px 0; max-width: 100%; margin: 0; }
+        .enfoque-container { display: flex; max-width: 1200px; margin: 0 auto; gap: 60px; align-items: center; padding: 0 40px; }
+        .enfoque-texto { flex: 1; min-width: 350px; }
+        .enfoque-img { flex: 1; min-width: 400px; height: 600px; background: url('perfil2.jpg') center/cover; }
+        .enfoque h2 { font-size: 3.2rem; margin-bottom: 35px; color: var(--oro); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 15px; display: inline-block; }
+
+        /* SECCIÓN ESPACIO DE ENCUENTRO (Usando consul2.png) */
+        .espacio { text-align: center; }
+        .espacio h2 { font-size: 2.8rem; margin-bottom: 20px; color: var(--oro); }
+        .consul2-img { max-width: 700px; height: auto; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin: 50px 0; }
+
+        /* FOOTER CON REDES */
+        footer { padding: 100px 20px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .foot-name { font-size: 2rem; letter-spacing: 5px; margin-bottom: 15px; color: var(--hueso); }
+        .contact-wa { font-weight: 200; font-size: 1.2rem; margin-bottom: 40px; color: #ccc; }
+        .contact-wa strong { color: var(--hueso); }
+        
+        .social-links { margin-bottom: 50px; display: flex; justify-content: center; gap: 30px; font-size: 1.8rem; }
+        .social-links a { color: var(--oro); text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { color: var(--blanco-puro); transform: scale(1.1); }
+        
+        .copyright { opacity: 0.5; font-size: 0.8rem; letter-spacing: 1.5px; margin-top: 50px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
+    <div class="site-background"></div>
+    <div class="site-overlay"></div>
+
     <section class="hero">
-        <img src="logo.png" alt="Carlos Cruz Logo" class="logo-img">
+        <img src="logo.png" alt="Carlos Cruz Acompañante Existencial" class="logo-img">
         <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
-        <a href="https://wa.me/529984943352" class="btn-meet">SOLICITAR ACOMPAÑAMIENTO</a>
+        <a href="https://wa.me/529984943352" class="btn-gold">SOLICITAR ACOMPAÑAMIENTO</a>
     </section>
 
     <section class="sobre-mi">
         <div class="perfil-foto"></div>
         <div class="bio">
-            <p class="found-title">Fundador del Círculo de Acompañamiento Existencial</p>
+            <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
             <h2>Carlos Cruz</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; font-weight: 300;">
-                Dedicado a la arqueología del gesto y la radiografía de lo invisible, transformando el dolor en terreno fértil para la vida, integrando la calidez del acompañamiento existencial.
+            <p class="desc-text">
+                Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.
             </p>
         </div>
     </section>
 
     <section class="enfoque">
-        <div class="enfoque-texto">
-            <h2>Radiografía de lo Invisible</h2>
-            <p style="font-weight: 200; line-height: 2; opacity: 0.9;">
-                Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer. Un espacio seguro, profesional y profundamente humano.
-            </p>
+        <div class="enfoque-container">
+            <div class="enfoque-texto">
+                <h2>Radiografía de lo Invisible</h2>
+                <p class="desc-text" style="font-size: 1.1rem;">
+                    Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer. Un espacio seguro, profesional y profundamente humano.
+                </p>
+            </div>
+            <div class="enfoque-img"></div>
         </div>
-        <div class="enfoque-img"></div>
+    </section>
+
+    <section class="espacio">
+        <h2>Un Refugio para la Escucha</h2>
+        <p class="desc-text">Te ofrezco un espacio físico diseñado para la introspección y la contención.</p>
+        <img src="consul2.png" alt="Espacio de Encuentro Carlos Cruz" class="consul2-img">
     </section>
 
     <footer>
-        <h3 class="serif" style="letter-spacing: 4px;">CARLOS CRUZ</h3>
-        <p>WhatsApp: +52 998 494 3352</p>
-        <p style="opacity: 0.4; font-size: 0.7rem; margin-top: 40px;">© 2026 ACOMPAÑAMIENTO EXISTENCIAL | CANCÚN, MÉXICO</p>
+        <h3 class="serif foot-name">CARLOS CRUZ</h3>
+        <p class="contact-wa">
+            Cancún, México | WhatsApp: <strong>+52 998 494 3352</strong>
+        </p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/TuPaginaAquí" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/TuPaginaAquí" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/529984943352" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <p class="copyright">© 2026 ACOMPAÑAMIENTO EXISTENCIAL | MARCA PERSONAL</p>
     </footer>
 
 </body>
