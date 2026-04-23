@@ -11,112 +11,77 @@
             --oro: #C5A059;
             --azul: #1A2B3C;
             --blanco-puro: #FFFFFF;
-            --texto-suave: #555555;
         }
         body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--hueso); color: var(--azul); scroll-behavior: smooth; overflow-x: hidden; }
-        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
         
-        /* 1. HERO SECTION CON LOGO DORADO */
+        /* HERO SECTION */
         .hero {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(26, 43, 60, 0.3), rgba(26, 43, 60, 0.3)), 
+            background: linear-gradient(rgba(26, 43, 60, 0.4), rgba(26, 43, 60, 0.4)), 
                         url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=2000');
             background-size: cover; background-position: center; background-attachment: fixed; padding: 0 20px;
         }
-        .logo-display { max-width: 400px; margin-bottom: 40px; }
-        .tagline { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: white; max-width: 700px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .logo-img { max-width: 350px; height: auto; margin-bottom: 30px; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
+        .tagline { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: white; max-width: 700px; margin-bottom: 40px; }
         .btn-meet {
             display: inline-block; padding: 18px 45px; background-color: var(--azul); color: var(--hueso);
-            text-decoration: none; letter-spacing: 2px; font-size: 0.9rem; font-weight: 400; transition: all 0.4s ease; border: 1px solid var(--azul);
+            text-decoration: none; letter-spacing: 2px; font-size: 0.9rem; transition: 0.4s; border: 1px solid var(--azul);
         }
         .btn-meet:hover { background-color: var(--blanco-puro); color: var(--azul); border-color: var(--blanco-puro); }
 
-        /* 2. RADIOGRAFÍA DE LO INVISIBLE */
-        .diferenciador { padding: 140px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .quote { font-size: 2.2rem; font-style: italic; color: var(--oro); margin-bottom: 30px; }
-        .desc { font-size: 1.15rem; line-height: 2; font-weight: 300; color: #555; }
-
-        /* 3. SERVICIOS ELITE */
-        .servicios { background-color: var(--blanco-puro); padding: 120px 20px; text-align: center; }
-        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1100px; margin: 60px auto 0; }
-        .card-servicio { padding: 50px; border: 1px solid #eee; transition: 0.4s; }
-        .card-servicio:hover { border-color: var(--oro); transform: translateY(-5px); }
-        .card-servicio h3 { color: var(--oro); font-size: 1.6rem; margin-bottom: 20px; }
-
-        /* 4. SOBRE CARLOS CRUZ (FOTO SELECCIONADA) */
-        .sobre-mi { padding: 140px 20px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 80px; }
+        /* SECCIÓN SOBRE TI */
+        .sobre-mi { padding: 120px 20px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 60px; }
         .perfil-foto { 
-            width: 450px; height: 550px; 
-            /* Insertamos la foto image_18.png como fondo de este bloque */
-            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200') center/cover; 
+            width: 400px; height: 500px; 
+            background: url('perfil.jpg') center/cover; /* AQUÍ APARECERÁ TU FOTO */
             border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
         }
         .bio { flex: 1; min-width: 350px; }
-        .bio h2 { font-size: 2.8rem; color: var(--azul); margin-bottom: 25px; border-bottom: 2px solid var(--oro); display: inline-block; padding-bottom: 10px; }
-        .found-title { font-size: 1.2rem; color: var(--oro); text-transform: uppercase; letter-spacing: 3px; font-weight: 300; margin-bottom: 20px; }
+        .bio h2 { font-size: 2.8rem; color: var(--azul); margin-bottom: 10px; }
+        .found-title { font-size: 1.1rem; color: var(--oro); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; }
+        
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card { padding: 30px; border: 1px solid #e0e0e0; text-align: center; }
+        .card h3 { color: var(--oro); margin-bottom: 15px; }
 
-        /* 5. FOOTER CON WHATSAPP ACTUALIZADO */
-        footer { background-color: var(--azul); color: var(--hueso); padding: 90px 20px; text-align: center; }
-        .foot-logo { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 15px; color: var(--hueso); }
-        .contact-info { font-weight: 200; font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; }
-        .social-links a { color: var(--oro); margin: 0 18px; text-decoration: none; font-size: 0.95rem; letter-spacing: 2px; }
+        footer { background-color: var(--azul); color: var(--hueso); padding: 80px 20px; text-align: center; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <img src="https://via.placeholder.com/400x200?text=Tu+Logo+Dorado" alt="Carlos Cruz Acompañante Existencial" class="logo-display">
+        <img src="Copia de Carlos Cruz.png" alt="Carlos Cruz Logo" class="logo-img">
         <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
         <a href="https://wa.me/529984943352" class="btn-meet">AGENDAR UN ESPACIO DE ENCUENTRO</a>
     </section>
 
-    <section id="arqueologia" class="diferenciador">
-        <p class="quote">"No buscamos reparar lo que está roto, sino dar sentido a lo que se vive."</p>
-        <p class="desc">
-            Acompaño a quienes navegan la angustia, el vacío y el duelo desde la fenomenología. Mi enfoque no es una técnica fría, sino una radiografía de lo invisible: una presencia consciente que valida el gesto y honra la soberanía de tu propia existencia.
-        </p>
-    </section>
-
-    <section id="servicios" class="servicios">
-        <h2 style="font-size: 2.8rem; color: var(--azul);">Servicios Elite</h2>
-        <div class="grid-servicios">
-            <div class="card-servicio">
-                <h3>Acompañamiento Existencial</h3>
-                <p>Para adultos que transitan crisis de sentido o la sensación de vacío profundo en su propia historia.</p>
-            </div>
-            <div class="card-servicio">
-                <h3>Tanatología Profesional</h3>
-                <p>Apoyo especializado y digno en procesos de muerte, pérdida y trascendencia.</p>
-            </div>
-            <div class="card-servicio">
-                <h3>Círculo de Acompañamiento</h3>
-                <p>Grupos selectos diseñados para sentir en libertad y compartir la carga del alma.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre-mi" class="sobre-mi">
+    <section class="sobre-mi">
         <div class="perfil-foto"></div>
         <div class="bio">
-            <h2>Sobre Carlos Cruz</h2>
             <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
-            <p class="text-content desc">
+            <h2>Sobre Carlos Cruz</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; font-weight: 300;">
                 Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia del estatus profesional con la calidez del acompañamiento fenomenológico.
             </p>
+            
+            <div class="grid-servicios">
+                <div class="card">
+                    <h3>Existencia</h3>
+                    <p style="font-size: 0.9rem;">Acompañamiento en crisis de sentido y vacío profundo.</p>
+                </div>
+                <div class="card">
+                    <h3>Tanatología</h3>
+                    <p style="font-size: 0.9rem;">Apoyo especializado en procesos de duelo y pérdida.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <h3 class="serif foot-logo">CARLOS CRUZ</h3>
-        <p class="contact-info">
-            Cancún, México | WhatsApp: <strong>+52 998 494 3352</strong>
-        </p>
-        <div class="social-links">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">FACEBOOK</a>
-            <a href="#">LINKEDIN</a>
-        </div>
-        <p style="opacity: 0.4; font-size: 0.75rem; margin-top: 50px; letter-spacing: 1px;">© 2026 RADIOGRAFÍA DE LO INVISIBLE | Acompañante Existencial</p>
+        <h3 class="serif" style="letter-spacing: 4px;">CARLOS CRUZ</h3>
+        <p style="font-weight: 200; margin: 20px 0;">Cancún, México | WhatsApp: +52 998 494 3352</p>
+        <p style="opacity: 0.4; font-size: 0.7rem;">© 2026 RADIOGRAFÍA DE LO INVISIBLE</p>
     </footer>
 
 </body>
