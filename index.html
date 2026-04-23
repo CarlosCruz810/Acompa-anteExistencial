@@ -8,113 +8,102 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --hueso: #F5F5F0;
             --oro: #C5A059;
-            --azul-profundo: #1A2B3C;
-            --blanco-puro: #FFFFFF;
+            --azul: #1A2B3C;
+            --blanco: #FFFFFF;
+            --hueso: #F5F5F0;
         }
 
-        /* FONDO FIJO PARA TODA LA PÁGINA */
-        body { 
-            margin: 0; padding: 0; 
-            font-family: 'Montserrat', sans-serif; 
-            color: var(--blanco-puro);
+        /* 1. FONDO FIJO INTEGRAL */
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; }
+        
+        .background-fixed {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(26, 43, 60, 0.75), rgba(26, 43, 60, 0.75)), 
                         url('https://images.unsplash.com/photo-1505833190673-3cb19ee2f749?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            scroll-behavior: smooth;
+            background-size: cover; background-position: center; z-index: -10;
         }
 
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; color: var(--blanco); }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
-        
-        section { padding: 100px 20px; text-align: center; max-width: 1000px; margin: 0 auto; }
 
-        /* HERO - LOGO GRANDE */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .logo-img { max-width: 550px; width: 90%; height: auto; margin-bottom: 40px; filter: drop-shadow(0 2px 15px rgba(0,0,0,0.4)); }
-        .tagline { font-size: 2rem; font-style: italic; max-width: 750px; margin-bottom: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        
-        .btn-gold {
-            display: inline-block; padding: 20px 50px; background-color: var(--azul-profundo); color: var(--hueso);
-            text-decoration: none; letter-spacing: 3px; font-size: 0.9rem; transition: 0.4s; border: 1px solid var(--azul-profundo);
+        /* 2. HERO - LOGO PROTAGONISTA */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .logo-main { max-width: 500px; width: 85%; height: auto; margin-bottom: 30px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)); }
+        .tagline { font-size: 1.8rem; font-style: italic; margin-bottom: 40px; opacity: 0.9; }
+        .cta-button { 
+            padding: 18px 45px; background: var(--azul); color: var(--hueso); text-decoration: none; 
+            letter-spacing: 3px; border: 1px solid var(--azul); transition: 0.4s;
         }
-        .btn-gold:hover { background-color: var(--blanco-puro); color: var(--azul-profundo); border-color: var(--blanco-puro); }
+        .cta-button:hover { background: var(--blanco); color: var(--azul); }
 
-        /* SECCIONES CON IMÁGENES */
-        .sobre-mi { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 60px; text-align: left; }
-        .perfil-foto { width: 380px; height: 500px; background: url('perfil.png') center/cover; border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
-        .bio { flex: 1; min-width: 320px; }
-        .found-title { font-size: 1.1rem; color: var(--oro); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; }
-        .desc-text { font-size: 1.15rem; line-height: 1.9; font-weight: 300; color: #f0f0f0; }
+        /* 3. BLOQUES DE IMÁGENES Y TEXTOS */
+        .flex-container { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 50px; margin-top: 40px; }
+        .img-box { width: 350px; height: 480px; object-fit: cover; border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        .text-box { flex: 1; min-width: 320px; line-height: 1.8; font-weight: 200; }
+        .gold-title { color: var(--oro); text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 15px; }
 
-        .circulo-img { max-width: 280px; height: auto; margin: 40px 0; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); }
+        /* 4. SECCIÓN CÍRCULO & CONSULTORIO */
+        .full-img { max-width: 100%; height: auto; margin: 30px 0; border-radius: 2px; }
+        .circle-visual { width: 250px; height: auto; margin: 0 auto; display: block; filter: brightness(1.1); }
 
-        .enfoque { display: flex; flex-wrap: wrap-reverse; align-items: center; text-align: left; gap: 60px; }
-        .enfoque-img { flex: 1; min-width: 380px; height: 550px; background: url('perfil2.jpg') center/cover; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
-        
-        .consul-img { max-width: 800px; width: 100%; height: auto; margin-top: 40px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-
-        /* FOOTER Y REDES */
-        footer { padding: 80px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; }
-        .social-links { margin: 40px 0; display: flex; justify-content: center; gap: 35px; font-size: 1.8rem; }
-        .social-links a { color: var(--oro); transition: 0.3s; text-decoration: none; }
-        .social-links a:hover { color: var(--blanco-puro); transform: translateY(-5px); }
-        
+        /* 5. FOOTER & REDES */
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .social-icons { margin: 30px 0; display: flex; justify-content: center; gap: 30px; font-size: 1.6rem; }
+        .social-icons a { color: var(--oro); text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover { color: var(--blanco); transform: translateY(-3px); }
     </style>
 </head>
 <body>
 
+    <div class="background-fixed"></div>
+
     <section class="hero">
-        <img src="logo.png" alt="Carlos Cruz Logo" class="logo-img">
+        <img src="logo.png" alt="Carlos Cruz Logo" class="logo-main">
         <p class="tagline">"Un refugio para el dolor; un espacio para la existencia."</p>
-        <a href="https://wa.me/529984943352" class="btn-gold">SOLICITAR ACOMPAÑAMIENTO</a>
+        <a href="https://wa.me/529984943352" class="cta-button">SOLICITAR ACOMPAÑAMIENTO</a>
     </section>
 
-    <section class="sobre-mi">
-        <div class="perfil-foto"></div>
-        <div class="bio">
-            <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Carlos Cruz</h2>
-            <p class="desc-text">
-                Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.
-            </p>
+    <section>
+        <div class="flex-container">
+            <img src="perfil.png" class="img-box" alt="Carlos Cruz">
+            <div class="text-box">
+                <p class="gold-title">Fundador de Tierra, Semilla y Fruto</p>
+                <h2 style="font-size: 2.5rem; margin-top: 0;">Carlos Cruz</h2>
+                <p>Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando la elegancia con la calidez del acompañamiento fenomenológico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center;">
+        <img src="circulo.png" class="circle-visual" alt="Círculo de Acompañamiento">
+        <h2 class="serif" style="color: var(--oro);">Espacios de Contención</h2>
+    </section>
+
+    <section>
+        <div class="flex-container" style="flex-direction: row-reverse;">
+            <img src="perfil2.jpg" class="img-box" alt="Enfoque">
+            <div class="text-box">
+                <h2 class="serif" style="font-size: 2.5rem; color: var(--oro);">Radiografía de lo Invisible</h2>
+                <p>Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer.</p>
+            </div>
         </div>
     </section>
 
     <section>
-        <img src="circulo.png" alt="Círculo de Acompañamiento" class="circulo-img">
-        <h2 class="serif" style="color: var(--oro); font-size: 2.2rem;">Espacios de Contención</h2>
-    </section>
-
-    <section class="enfoque">
-        <div style="flex: 1; min-width: 320px;">
-            <h2 class="serif" style="font-size: 2.8rem; color: var(--oro); margin-bottom: 25px;">Radiografía de lo Invisible</h2>
-            <p class="desc-text">
-                Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar la semilla de lo que está por nacer. Un espacio seguro, profesional y profundamente humano.
-            </p>
-        </div>
-        <div class="enfoque-img"></div>
-    </section>
-
-    <section>
-        <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 20px;">Un Refugio para la Escucha</h2>
-        <p class="desc-text">Te ofrezco un espacio físico diseñado para la introspección y la contención.</p>
-        <img src="consul2.png" alt="Consultorio" class="consul-img">
+        <h2 class="serif" style="text-align: center; color: var(--oro);">Un Refugio para la Escucha</h2>
+        <img src="consul2.png" class="full-img" alt="Consultorio">
     </section>
 
     <footer>
-        <h3 class="serif" style="letter-spacing: 5px; font-size: 1.8rem; margin-bottom: 10px;">CARLOS CRUZ</h3>
-        <p style="font-weight: 200; color: #ccc;">Cancún, México | WhatsApp: +52 998 494 3352</p>
-        
-        <div class="social-links">
-            <a href="https://wa.me/529984943352" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <h3 class="serif" style="letter-spacing: 5px;">CARLOS CRUZ</h3>
+        <p style="opacity: 0.7;">Cancún, México | +52 998 494 3352</p>
+        <div class="social-icons">
+            <a href="https://wa.me/529984943352"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
-        
-        <p style="opacity: 0.4; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">© 2026 ACOMPAÑAMIENTO EXISTENCIAL</p>
+        <p style="font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 ACOMPAÑAMIENTO EXISTENCIAL</p>
     </footer>
 
 </body>
