@@ -19,47 +19,45 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text);
 
-    background: linear-gradient(rgba(15,20,25,0.6), rgba(15,20,25,0.8)),
+    background: linear-gradient(rgba(15,20,25,0.6), rgba(15,20,25,0.85)),
     url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop');
 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
+    scroll-behavior: smooth;
 }
 
 /* SECCIONES */
 .section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 100px 20px;
-}
-
-.hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 60px 20px;
     text-align: center;
-
 }
 
-/* LOGO */
+/* HERO */
 .logo-img {
-    height: 45vh;
+    height: 75vh;
+    object-fit: contain;
 }
 
 /* TEXTO */
 .tagline {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    max-width: 650px;
-    margin: 30px 0;
+    max-width: 700px;
+    margin-top: 30px;
     line-height: 1.5;
 }
 
 /* BOTÓN */
 .btn {
+    margin-top: 40px;
     padding: 14px 40px;
     border: 1px solid rgba(255,255,255,0.3);
     text-decoration: none;
@@ -78,7 +76,6 @@ body {
 /* WHATSAPP */
 .whatsapp {
     margin-top: 20px;
-    text-align: center;
 }
 
 .whatsapp a {
@@ -96,16 +93,15 @@ body {
 
 /* REDES */
 .social {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
-    justify-content: center;
     gap: 25px;
 }
 
 .social a {
     color: var(--text);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     opacity: 0.7;
 }
 
@@ -114,71 +110,34 @@ body {
     opacity: 1;
 }
 
-/* SOBRE MI */
-.sobre-mi {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 60px;
-}
-
-.perfil-foto {
-    width: 350px;
-    height: 480px;
-    background: url('perfil.png') center/cover;
-}
-
-.bio {
-    flex: 1;
-    min-width: 300px;
-}
-
-.bio h2 {
+/* TITULOS */
+h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
 }
 
-.found-title {
-    color: var(--gold);
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
+p {
+    max-width: 650px;
+    line-height: 1.8;
+    opacity: 0.85;
 }
 
-/* ENFOQUE */
-.enfoque {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    align-items: center;
+/* ANIMACIÓN SCROLL */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1.2s ease;
 }
 
-.enfoque-texto {
-    flex: 1;
-    padding: 40px;
-}
-
-.enfoque-img {
-    flex: 1;
-    min-height: 400px;
-    background: url('perfil2.jpg') center/cover;
-}
-
-.enfoque h2 {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 60px;
-    font-size: 0.7rem;
-    opacity: 0.5;
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-    .logo-img { height: 35vh; }
+    .logo-img { height: 60vh; }
     .tagline { font-size: 1.5rem; }
 }
 </style>
@@ -187,7 +146,7 @@ footer {
 <body>
 
 <!-- HERO -->
-<section class="hero">
+<section class="section">
     <img src="logo.png" class="logo-img">
 
     <p class="tagline">
@@ -211,42 +170,43 @@ footer {
     </div>
 </section>
 
-<!-- SOBRE MI -->
-<section class="section sobre-mi">
-    <div class="perfil-foto"></div>
-
-    <div class="bio">
-        <p class="found-title">Fundador de Tierra, Semilla y Fruto</p>
-        <h2>Carlos Cruz</h2>
-
-        <p>
-            Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible. 
-            He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida, integrando 
-            la elegancia con la calidez del acompañamiento fenomenológico.
-        </p>
-    </div>
+<!-- SOBRE -->
+<section class="section fade">
+    <h2>Carlos Cruz</h2>
+    <p>
+        Psicólogo y Tanatólogo dedicado a la arqueología del gesto y la radiografía de lo invisible.  
+        He dedicado mi trayectoria a transformar el dolor en terreno fértil para la vida.
+    </p>
 </section>
 
 <!-- ENFOQUE -->
-<section class="section enfoque">
-
-    <div class="enfoque-texto">
-        <h2>Radiografía de lo Invisible</h2>
-
-        <p>
-            Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial. 
-            No se trata solo de superar el dolor, sino de aprender a habitarlo para encontrar 
-            la semilla de lo que está por nacer.
-        </p>
-    </div>
-
-    <div class="enfoque-img"></div>
-
+<section class="section fade">
+    <h2>Radiografía de lo Invisible</h2>
+    <p>
+        Acompaño procesos de duelo y crisis de sentido desde una perspectiva existencial.  
+        No se trata solo de superar el dolor, sino de aprender a habitarlo.
+    </p>
 </section>
 
-<footer>
-© 2026 · Acompañamiento Existencial · Cancún
+<footer class="section">
+    <p style="font-size: 0.8rem; opacity: 0.5;">
+        © 2026 · Acompañamiento Existencial · Cancún
+    </p>
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+faders.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
