@@ -13,6 +13,7 @@
     --text: #F5F5F0;
 }
 
+/* FONDO */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -42,6 +43,7 @@ body {
 /* HERO */
 .logo-img {
     height: 75vh;
+    animation: fadeIn 1.5s ease;
 }
 
 /* TEXTO */
@@ -50,6 +52,9 @@ body {
     font-size: 2rem;
     max-width: 700px;
     margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.5s;
 }
 
 /* TITULOS */
@@ -76,29 +81,21 @@ p {
     font-size: 0.8rem;
     text-transform: uppercase;
     transition: 0.4s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .btn:hover {
     border-color: var(--gold);
     color: var(--gold);
+    transform: translateY(-3px);
 }
 
-/* WHATSAPP */
-.whatsapp {
-    margin-top: 20px;
-}
-
-.whatsapp a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--text);
-    opacity: 0.8;
-}
-
-.whatsapp a:hover {
-    opacity: 1;
+/* ICONOS */
+.icon {
+    width: 18px;
+    height: 18px;
 }
 
 /* REDES */
@@ -110,26 +107,32 @@ p {
 
 .social a {
     color: var(--text);
-    text-decoration: none;
-    font-size: 0.8rem;
     opacity: 0.7;
+    transition: 0.3s;
 }
 
 .social a:hover {
     color: var(--gold);
     opacity: 1;
+    transform: translateY(-3px);
 }
 
-/* ANIMACIÓN */
+/* ANIMACIÓN SCROLL */
 .fade {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
     transition: 1.2s ease;
 }
 
 .visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 /* RESPONSIVE */
@@ -169,7 +172,7 @@ p {
     </p>
 </section>
 
-<!-- CIERRE PREMIUM -->
+<!-- CIERRE -->
 <section class="section fade">
 
     <h2>Este puede ser el inicio de algo distinto</h2>
@@ -180,22 +183,37 @@ p {
     </p>
 
     <!-- CALENDARIO -->
-    <a href="TU_LINK_CALENDAR" class="btn">Agendar proceso</a>
+    <a href="TU_LINK_CALENDAR" class="btn">
+        <!-- ICONO CALENDARIO -->
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 6H4v12h16V8z"/>
+        </svg>
+        Agendar proceso
+    </a>
 
     <!-- WHATSAPP -->
-    <div class="whatsapp">
-        <a href="https://wa.me/529984943352" target="_blank">
-            <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor">
-                <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.3.7 4.5 2 6.4L4 29l7.9-2.1c1.8 1 3.8 1.5 6.1 1.5 6.6 0 12-5.3 12-11.8S22.6 3 16 3z"/>
-            </svg>
-            Contacto directo
-        </a>
-    </div>
+    <a href="https://wa.me/529984943352" target="_blank" class="btn">
+        <svg class="icon" viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.3.7 4.5 2 6.4L4 29l7.9-2.1c1.8 1 3.8 1.5 6.1 1.5 6.6 0 12-5.3 12-11.8S22.6 3 16 3z"/>
+        </svg>
+        Contacto directo
+    </a>
 
     <!-- REDES -->
     <div class="social">
-        <a href="https://www.facebook.com/810carloscruz" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/carloscruz_810/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/810carloscruz" target="_blank">
+            <!-- FB -->
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3H13v7A10 10 0 0022 12z"/>
+            </svg>
+        </a>
+
+        <a href="https://www.instagram.com/carloscruz_810/" target="_blank">
+            <!-- IG -->
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-1.8a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6z"/>
+            </svg>
+        </a>
     </div>
 
 </section>
